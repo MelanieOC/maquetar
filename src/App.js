@@ -5,6 +5,7 @@ import './App.css';
 import img1 from './img/agenda.png';
 import img2 from './img/stylus.jpg';
 import img3 from './img/evernote.png';
+import StackedForm from './StackedForm.js'
 
 const HeaderTable = () => {
   return (
@@ -102,6 +103,7 @@ class App extends Component {
             </ListGroupItem>
           </ListGroup>
         </Panel>
+        <StackedForm />
       </div>
     );
   }
