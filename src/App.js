@@ -80,6 +80,38 @@ class App extends Component {
     const title = (<HeaderTable />);
     const footer = (<FooterTable />);
     return (
+      <div id= "tab">
+      <Form horizontal>
+              <h4>Stacked Form</h4>
+              <ControlLabel>Email address</ControlLabel>
+            <FormGroup controlId="formHorizontalEmail" >
+              <Col sm={10}>
+                <FormControl type="email" placeholder="Enter email" id ="inputs"/>
+              </Col>
+            </FormGroup>
+            <ControlLabel>Password</ControlLabel>
+            <FormGroup controlId="formHorizontalPassword">
+              <Col sm={10}>
+                <FormControl  type="password" placeholder="Password" id ="inputs"/>
+              </Col>
+            </FormGroup>
+        
+            <FormGroup id="checkSuscribe">
+              <Col smOffset={2} sm={10}>
+                <Checkbox>Subscribe to newsletter</Checkbox>
+              </Col>
+            </FormGroup>
+        
+            <FormGroup>
+              <Col smOffset={2} sm={10}>
+                <Button type="submit" id="btnSubmit">
+                  Submit
+                </Button>
+              </Col>
+            </FormGroup>
+          </Form>
+            </div>
+            
       <div>
         <Panel collapsible defaultExpanded header={title} footer={footer}>
           <ListGroup fill>
@@ -110,3 +142,5 @@ class App extends Component {
 }
 
 export default App;
+
+
