@@ -30,10 +30,6 @@ form .btn, form .btnSubmit{
 
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
 body{
   background-color: #f2f2f2;
@@ -75,14 +71,46 @@ body{
   width: 50%;
 }
 
-img{
-  width: 50%;
+.img-container {
+  border-radius: 6px;
+  display: block;
+  height: 100px;
+  overflow: hidden;
+  width: 80%;
+  margin-left: 10px;
 }
+
 li{
   list-style: none;
   border-bottom: 1px solid black;
 }
-.result{
-  width: 50%;
+.results{
+  width: 80%;
   margin: 0 auto;
+}
+
+.btn-group .btn-sm{
+  font-size: 12px;
+  border-radius: 26px;
+  padding: 4px 10px;
+  box-sizing: border-box;
+  border-width: 2px;
+  font-weight: 600;
+  border-color: #66615B;
+  color: #66615B;
+}
+.btn-group .btn-sm:hover{
+  color:white;
+  background-color: #66615B;
+}
+.btn-group>.btn:first-child:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn-group>.btn:last-child:not(:first-child){
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-group .btn + .btn{
+  margin-left: -2px;
 }

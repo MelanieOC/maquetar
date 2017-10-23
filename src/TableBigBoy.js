@@ -7,37 +7,34 @@ import img3 from './img/evernote.png';
 
 const HeaderTable = () => {
     return (
-        <Grid>
-            <Form horizontal>
-                <FormGroup className="header">
-                    <Col xs={3} md={3}>
-                    </Col>
-                    <Col xs={4} md={4}>
-                    </Col>
-                    <Col xs={1} md={1}>
-                        Price
+        <Row>
+            <Col xs={3} md={3}>
             </Col>
-                    <Col xs={2} md={2}>
-                        Quantity
+            <Col xs={4} md={4}>
             </Col>
-                    <Col xs={2} md={2}>
-                        Total
+            <Col xs={1} md={1}>
+                Price
             </Col>
-                </FormGroup>
-            </Form>
-        </Grid>
-
+            <Col xs={2} md={2}>
+                Quantity
+            </Col>
+            <Col xs={2} md={2}>
+                Total
+            </Col>
+        </Row>
     );
 }
 
 const ContentTable = ({ img, title, content, price }) => {
     return (
         <Row>
-            <Col xs={3} md={3}>
-                <Image className="img" src={img} responsive />
+            <Col xs={2} md={2}>
+                <div className='img-container'>
+                    <Image src={img} responsive />
+                </div>
             </Col>
-            <Col xs={4} md={4}>
-                <h2>{title}</h2>
+            <Col xs={5} md={5}>
+                <strong>{title}</strong>
                 <p>{content}</p>
             </Col>
             <Col xs={1} md={1}>
@@ -48,9 +45,9 @@ const ContentTable = ({ img, title, content, price }) => {
             </Col>
             <Col xs={2} md={2}>
                 1
-        <ButtonGroup>
-                    <Button>-</Button>
-                    <Button>+</Button>
+                 <ButtonGroup>
+                    <Button bsSize="small">-</Button>
+                    <Button bsSize="small">+</Button>
                 </ButtonGroup>
             </Col>
             <Col xs={2} md={2}>
@@ -68,12 +65,12 @@ const FooterTable = () => {
         <Row>
             <Col xs={3} md={3}>
                 Total
-      </Col>
+            </Col>
             <Col xs={2} xsOffset={10} md={2} mdOffset={10}>
                 <strong>
                     <small>€</small>
-                    1846
-      </strong>
+                    <span>1846</span>
+                </strong>
             </Col>
         </Row>
     );
@@ -83,7 +80,7 @@ const TableBigBoy = () => {
     const title = (<HeaderTable />);
     const footer = (<FooterTable />);
     return (
-        <div className="results">
+        <Grid className="results">
             <Panel collapsible defaultExpanded header={title} footer={footer}>
                 <ListGroup fill>
                     <ListGroupItem>
@@ -106,7 +103,7 @@ const TableBigBoy = () => {
                     </ListGroupItem>
                 </ListGroup>
             </Panel>
-        </div>
+        </Grid>
     );
 }
 

@@ -16,7 +16,7 @@ import './App.css';
 
 const StackedForm = () => {
   return (
-    <Grid className="card">
+    <Grid className="card" id='tab'>
       <Col sm={12}>
         <h4>Stacked Form</h4>
       </Col>
