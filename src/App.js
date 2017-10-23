@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import { Grid, Row, Col, Image, Button, ButtonGroup, Panel, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Form, FormGroup, FormControl, Grid, Row, Col, Image, Button, ButtonGroup, Panel, ListGroup, ListGroupItem } from 'react-bootstrap';
 import './App.css';
 import img1 from './img/agenda.png';
 import img2 from './img/stylus.jpg';
@@ -8,21 +8,26 @@ import img3 from './img/evernote.png';
 
 const HeaderTable = () => {
   return (
-    <Row>
-      <Col xs={3} md={3}>
-      </Col>
-      <Col xs={4} md={4}>
-      </Col>
-      <Col xs={1} md={1}>
-        Price
-    </Col>
-      <Col xs={2} md={2}>
-        Quantity
-    </Col>
-      <Col xs={2} md={2}>
-        Total
-    </Col>
-    </Row>
+    <Grid>
+      <Form horizontal>
+        <FormGroup className="header">
+            <Col xs={3} md={3}>
+            </Col>
+            <Col xs={4} md={4}>
+            </Col>
+            <Col xs={1} md={1}>
+              Price
+          </Col>
+            <Col xs={2} md={2}>
+              Quantity
+          </Col>
+            <Col xs={2} md={2}>
+              Total
+          </Col>
+        </FormGroup>
+      </Form>
+    </Grid>
+    
   );
 }
 
@@ -30,7 +35,7 @@ const ContentTable = ({ img, title, content, price }) => {
   return (
     <Row>
       <Col xs={3} md={3}>
-        <Image src={img} responsive />
+        <Image className="img" src={img} responsive />
       </Col>
       <Col xs={4} md={4}>
         <h2>{title}</h2>
@@ -79,7 +84,7 @@ class App extends Component {
     const title = (<HeaderTable />);
     const footer = (<FooterTable />);
     return (
-      <div>
+      <div className="results">
         <Panel collapsible defaultExpanded header={title} footer={footer}>
           <ListGroup fill>
             <ListGroupItem>
