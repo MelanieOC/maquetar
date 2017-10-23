@@ -7,21 +7,26 @@ import img3 from './img/evernote.png';
 
 const HeaderTable = () => {
     return (
-        <Row>
-            <Col xs={3} md={3}>
+        <Grid>
+            <Form horizontal>
+                <FormGroup className="header">
+                    <Col xs={3} md={3}>
+                    </Col>
+                    <Col xs={4} md={4}>
+                    </Col>
+                    <Col xs={1} md={1}>
+                        Price
             </Col>
-            <Col xs={4} md={4}>
+                    <Col xs={2} md={2}>
+                        Quantity
             </Col>
-            <Col xs={1} md={1}>
-                Price
-    </Col>
-            <Col xs={2} md={2}>
-                Quantity
-    </Col>
-            <Col xs={2} md={2}>
-                Total
-    </Col>
-        </Row>
+                    <Col xs={2} md={2}>
+                        Total
+            </Col>
+                </FormGroup>
+            </Form>
+        </Grid>
+
     );
 }
 
@@ -29,7 +34,7 @@ const ContentTable = ({ img, title, content, price }) => {
     return (
         <Row>
             <Col xs={3} md={3}>
-                <Image src={img} responsive />
+                <Image className="img" src={img} responsive />
             </Col>
             <Col xs={4} md={4}>
                 <h2>{title}</h2>
@@ -43,7 +48,7 @@ const ContentTable = ({ img, title, content, price }) => {
             </Col>
             <Col xs={2} md={2}>
                 1
-      <ButtonGroup>
+        <ButtonGroup>
                     <Button>-</Button>
                     <Button>+</Button>
                 </ButtonGroup>
@@ -78,28 +83,30 @@ const TableBigBoy = () => {
     const title = (<HeaderTable />);
     const footer = (<FooterTable />);
     return (
-        <Panel collapsible defaultExpanded header={title} footer={footer}>
-            <ListGroup fill>
-                <ListGroupItem>
-                    <ContentTable img={img1} title={'Notebook'}
-                        content={'Most beautiful agenda for the office.'}
-                        price={49}
-                    />
-                </ListGroupItem>
-                <ListGroupItem>
-                    <ContentTable img={img2} title={'Stylus'}
-                        content={'Design is not just what it looks like and feels like. Design is how it works.'}
-                        price={499}
-                    />
-                </ListGroupItem>
-                <ListGroupItem>
-                    <ContentTable img={img3} title={'Evernote iPad Stander'}
-                        content={'A groundbreaking Retina display. All-flash architecture. Fourth-generation Intel processors.'}
-                        price={799}
-                    />
-                </ListGroupItem>
-            </ListGroup>
-        </Panel>
+        <div className="results">
+            <Panel collapsible defaultExpanded header={title} footer={footer}>
+                <ListGroup fill>
+                    <ListGroupItem>
+                        <ContentTable img={img1} title={'Notebook'}
+                            content={'Most beautiful agenda for the office.'}
+                            price={49}
+                        />
+                    </ListGroupItem>
+                    <ListGroupItem>
+                        <ContentTable img={img2} title={'Stylus'}
+                            content={'Design is not just what it looks like and feels like. Design is how it works.'}
+                            price={499}
+                        />
+                    </ListGroupItem>
+                    <ListGroupItem>
+                        <ContentTable img={img3} title={'Evernote iPad Stander'}
+                            content={'A groundbreaking Retina display. All-flash architecture. Fourth-generation Intel processors.'}
+                            price={799}
+                        />
+                    </ListGroupItem>
+                </ListGroup>
+            </Panel>
+        </div>
     );
 }
 
